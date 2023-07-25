@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:based_dock_scaffold/based_dock_scaffold.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,30 +9,55 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Based Dock Scaffold Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          brightness: MediaQuery.platformBrightnessOf(context),
           seedColor: Colors.deepPurple,
         ),
         useMaterial3: true,
       ),
       home: BasedDockScaffold(
         appBar: AppBar(
-          title: const Text('BasedDockScaffold'),
+          title: const Text('Based Dock Scaffold'),
         ),
         body: const Center(
           child: Wrap(
+            spacing: 8,
             direction: Axis.vertical,
             crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 8,
             children: [
               Text('Pull Up The Dock!'),
               ShowButton(),
+              Text('Click Outside To Hide The Dock!'),
             ],
           ),
         ),
+        dockChild: const Wrap(
+          spacing: 8,
+          alignment: WrapAlignment.center,
+          runAlignment: WrapAlignment.center,
+          children: [
+            ErrorShowButton(),
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class ErrorShowButton extends StatelessWidget {
+  const ErrorShowButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      tooltip:
+          '**_DO NOT_** use `BasedDockScaffold.of(context)` in the subtree of `dockChild`',
+      onPressed: () {
+        final state = BasedDockScaffold.of(context);
+        state.showDock();
+      },
+      icon: const Icon(Icons.error, color: Colors.red),
     );
   }
 }
@@ -49,7 +72,7 @@ class ShowButton extends StatelessWidget {
     return TextButton(
       onPressed: () {
         final state = BasedDockScaffold.of(context);
-        state.show();
+        state.showDock();
       },
       child: const Text('Show Up The Dock!'),
     );

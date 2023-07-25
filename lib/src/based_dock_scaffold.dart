@@ -129,6 +129,7 @@ import 'index.dart';
 class BasedDockScaffold extends StatefulWidget {
   const BasedDockScaffold({
     super.key,
+    this.dockChild,
     this.dockPositionLowerBound = -64,
     this.dockPositionBreakPoint = 0,
     this.dockPositionUpperBound = 40,
@@ -161,6 +162,7 @@ class BasedDockScaffold extends StatefulWidget {
   final double dockPositionLowerBound;
   final double dockPositionBreakPoint;
   final double dockPositionUpperBound;
+  final Widget? dockChild;
 
   /// If true, and [bottomNavigationBar] or [persistentFooterButtons]
   /// is specified, then the [body] extends to the bottom of the Scaffold,
@@ -462,12 +464,15 @@ class BasedDockScaffold extends StatefulWidget {
     }
     throw FlutterError.fromParts(<DiagnosticsNode>[
       ErrorSummary(
-        'Scaffold.of() called with a context that does not contain a Scaffold.',
+        'BasedDockScaffoldState.of() called with a context that does not contain a BasedDockScaffoldState.',
       ),
       ErrorDescription(
-        'No Scaffold ancestor could be found starting from the context that was passed to Scaffold.of(). '
+        'No BasedDockScaffoldState ancestor could be found starting from the context that was passed to BasedDockScaffoldState.of(). '
         'This usually happens when the context provided is from the same StatefulWidget as that '
-        'whose build function actually creates the Scaffold widget being sought.',
+        'whose build function actually creates the BasedDockScaffoldState widget being sought.',
+      ),
+      ErrorDescription(
+        'Or called in the subtree of dockChild.',
       ),
       ErrorHint(
         'There are several ways to avoid this problem. The simplest is to use a Builder to get a '

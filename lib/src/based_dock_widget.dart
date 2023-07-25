@@ -7,12 +7,14 @@ class BaseDockWidget extends StatelessWidget {
     required this.onVerticalDragStart,
     required this.onVerticalDragUpdate,
     required this.onVerticalDragEnd,
+    this.child,
   });
 
   final double bottom;
   final GestureDragStartCallback onVerticalDragStart;
   final GestureDragUpdateCallback onVerticalDragUpdate;
   final GestureDragEndCallback onVerticalDragEnd;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +39,7 @@ class BaseDockWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [],
-              ),
+              child: child,
             ),
           ),
         ),

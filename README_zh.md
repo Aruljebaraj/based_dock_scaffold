@@ -28,19 +28,11 @@
 
 # 📸 示例
 
-![screenshots](.github/screenshot.gif)
+![screenshots](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/screenshot.gif)
 
 # 📦 使用方式
 
-- 将 `based_dock_scaffold` 添加至你的 `pubspec.yaml`
-
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  ...
-  based_dock_scaffold: $latest_version
-```
+- 按照 [Installing](https://pub.dev/packages/based_dock_scaffold/install) 将 `based_dock_scaffold` 添加至你的 `pubspec.yaml`
 
 - 在 [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart) 查看样例代码
 
@@ -52,13 +44,19 @@ dependencies:
 
 - **_不要_** 导入任何在 `src` 文件夹下的文件：
 
-```dart
-import 'package:based_dock_scaffold/src/*.dart';
-```
+  ```dart
+  import 'package:based_dock_scaffold/src/*.dart';
+  ```
+
+- **_不要_** 在 `dockChild` 的子树中调用 `BasedDockScaffold.of(context)`
+
+  就像 [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart) 里的组件树一样，你找不到 `BasedDockScaffoldState`
+
+  ![widget_tree](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/image.png)
 
 - 因为 `BasedDockScaffold` 实际上 **_不是_** 一个 `Scaffold` 组件
-  你应该使用 `Scaffold.of(context)` 来获取 `ScaffoldState`
-  而不是 `BasedDockScaffold.of(context)`
+  你无法通过调用 `BasedDockScaffold.of(context)` 来获取 `ScaffoldState`
+  而是应该调用 `Scaffold.of(context)` 来获取 `ScaffoldState`
 
 # 🧑‍💻 贡献者
 

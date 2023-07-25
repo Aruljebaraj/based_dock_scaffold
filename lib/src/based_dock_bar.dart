@@ -32,7 +32,7 @@ class BasedDockBarWidget extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Container(
                 height: 4,
-                margin: EdgeInsetsDirectional.only(start: side, end: side),
+                width: width - 2 * side,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.outline,
                   borderRadius: BorderRadius.circular(4 / 2),

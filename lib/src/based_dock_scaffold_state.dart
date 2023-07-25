@@ -17,7 +17,7 @@ class BasedDockScaffoldState extends State<BasedDockScaffold> {
         return Stack(
           children: [
             GestureDetector(
-              onTap: _hide,
+              onTap: _hideDock,
               child: Container(
                 color: Colors.transparent,
               ),
@@ -27,6 +27,7 @@ class BasedDockScaffoldState extends State<BasedDockScaffold> {
               onVerticalDragStart: _onVerticalDragStart,
               onVerticalDragUpdate: _onVerticalDragUpdate,
               onVerticalDragEnd: _onVerticalDragEnd,
+              child: widget.dockChild,
             ),
           ],
         );
@@ -34,7 +35,7 @@ class BasedDockScaffoldState extends State<BasedDockScaffold> {
     );
   }
 
-  void show() {
+  void showDock() {
     OverlayState overlayState = Overlay.of(context);
     if (_overlayEntry.mounted) return;
     overlayState.insert(_overlayEntry);
@@ -46,7 +47,7 @@ class BasedDockScaffoldState extends State<BasedDockScaffold> {
     });
   }
 
-  void _hide() {
+  void _hideDock() {
     setState(() {
       _barPosition = widget.dockPositionLowerBound;
       _overlayEntry.markNeedsBuild();

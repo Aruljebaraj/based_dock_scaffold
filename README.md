@@ -28,19 +28,11 @@ A Based Dock Scaffold Widget, Which Helps You Create A Scaffold With A IPad-Like
 
 # 📸 Screenshots
 
-![screenshots](.github/screenshot.gif)
+![screenshots](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/screenshot.gif)
 
 # 📦 How to use
 
-- Add `based_dock_scaffold` to your `pubspec.yaml`
-
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  ...
-  based_dock_scaffold: $latest_version
-```
+- Follow [Installing](https://pub.dev/packages/based_dock_scaffold/install) to add `based_dock_scaffold` to your `pubspec.yaml`
 
 - See the example code at [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart)
 
@@ -52,13 +44,19 @@ Done, but it will revise if necessary
 
 - **_DO NOT_** import any file below `src` folder:
 
-```dart
-import 'package:based_dock_scaffold/src/*.dart';
-```
+  ```dart
+  import 'package:based_dock_scaffold/src/*.dart';
+  ```
 
-- Since `BasedDockScaffold` is actually **_NOT_** a `Scaffold`
-  you should use `Scaffold.of(context)` to get `ScaffoldState`
-  rather than `BasedDockScaffold.of(context)`
+- **_DO NOT_** use `BasedDockScaffold.of(context)` in the subtree of `dockChild`
+
+  Like the widget tree at [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart), you can't find the `BasedDockScaffoldState`
+
+  ![widget_tree](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/image.png)
+
+- Since `BasedDockScaffold` is actually **_NOT_** a `Scaffold` widget,
+  you can't get the `ScaffoldState` by using `BasedDockScaffold.of(context)`
+  Instead, you should use `Scaffold.of(context)` to get `ScaffoldState`
 
 # 🧑‍💻 Contributor
 
