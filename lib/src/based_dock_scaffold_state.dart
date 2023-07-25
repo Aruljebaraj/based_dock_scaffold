@@ -1,9 +1,9 @@
 import 'index.dart';
 
-/// State for a [Scaffold].
+/// State for a [BasedDockScaffold].
 ///
-/// Can display [BottomSheet]s. Retrieve a [ScaffoldState] from the current
-/// [BuildContext] using [Scaffold.of].
+/// Can display [BaseDockWidget]. Retrieve a [BasedDockScaffoldState] from the current
+/// [BuildContext] using [BasedDockScaffold.of].
 class BasedDockScaffoldState extends State<BasedDockScaffold> {
   late OverlayEntry _overlayEntry;
   late double _barPosition;

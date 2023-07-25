@@ -1,5 +1,6 @@
 import 'index.dart';
 
+/// [BaseDockWidget] will show up when user pull up [BasedDockBarWidget]
 class BaseDockWidget extends StatelessWidget {
   const BaseDockWidget({
     super.key,

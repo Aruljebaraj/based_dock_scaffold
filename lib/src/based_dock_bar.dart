@@ -1,5 +1,6 @@
 import 'index.dart';
 
+/// [BasedDockBarWidget] fixed at the bottom of [BasedDockScaffold]
 class BasedDockBarWidget extends StatelessWidget {
   const BasedDockBarWidget({
     super.key,

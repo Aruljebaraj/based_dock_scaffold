@@ -1,131 +1,12 @@
 import 'index.dart';
 
-/// Implements the basic Material Design visual layout structure.
+/// A Based Dock Scaffold Widget, Which Helps You Create A Scaffold With A IPad-Like Dock.
 ///
-/// This class provides APIs for showing drawers and bottom sheets.
+/// This class wrapped a [Scaffold] and show a [BasedDockBarWidget] widget under the [Scaffold]
 ///
-/// To display a persistent bottom sheet, obtain the
-/// [ScaffoldState] for the current [BuildContext] via [Scaffold.of] and use the
-/// [ScaffoldState.showBottomSheet] function.
-///
-/// {@tool dartpad}
-/// This example shows a [Scaffold] with a [body] and [FloatingActionButton].
-/// The [body] is a [Text] placed in a [Center] in order to center the text
-/// within the [Scaffold]. The [FloatingActionButton] is connected to a
-/// callback that increments a counter.
-///
-/// ![The Scaffold has a white background with a blue AppBar at the top. A blue FloatingActionButton is positioned at the bottom right corner of the Scaffold.](https://flutter.github.io/assets-for-api-docs/assets/material/scaffold.png)
-///
-/// ** See code in examples/api/lib/material/scaffold/scaffold.0.dart **
-/// {@end-tool}
-///
-/// {@tool dartpad}
-/// This example shows a [Scaffold] with a blueGrey [backgroundColor], [body]
-/// and [FloatingActionButton]. The [body] is a [Text] placed in a [Center] in
-/// order to center the text within the [Scaffold]. The [FloatingActionButton]
-/// is connected to a callback that increments a counter.
-///
-/// ![](https://flutter.github.io/assets-for-api-docs/assets/material/scaffold_background_color.png)
-///
-/// ** See code in examples/api/lib/material/scaffold/scaffold.1.dart **
-/// {@end-tool}
-///
-/// {@tool dartpad}
-/// This example shows a [Scaffold] with an [AppBar], a [BottomAppBar] and a
-/// [FloatingActionButton]. The [body] is a [Text] placed in a [Center] in order
-/// to center the text within the [Scaffold]. The [FloatingActionButton] is
-/// centered and docked within the [BottomAppBar] using
-/// [FloatingActionButtonLocation.centerDocked]. The [FloatingActionButton] is
-/// connected to a callback that increments a counter.
-///
-/// ![](https://flutter.github.io/assets-for-api-docs/assets/material/scaffold_bottom_app_bar.png)
-///
-/// ** See code in examples/api/lib/material/scaffold/scaffold.2.dart **
-/// {@end-tool}
-///
-/// ## Scaffold layout, the keyboard, and display "notches"
-///
-/// The scaffold will expand to fill the available space. That usually
-/// means that it will occupy its entire window or device screen. When
-/// the device's keyboard appears the Scaffold's ancestor [MediaQuery]
-/// widget's [MediaQueryData.viewInsets] changes and the Scaffold will
-/// be rebuilt. By default the scaffold's [body] is resized to make
-/// room for the keyboard. To prevent the resize set
-/// [resizeToAvoidBottomInset] to false. In either case the focused
-/// widget will be scrolled into view if it's within a scrollable
-/// container.
-///
-/// The [MediaQueryData.padding] value defines areas that might
-/// not be completely visible, like the display "notch" on the iPhone
-/// X. The scaffold's [body] is not inset by this padding value
-/// although an [appBar] or [bottomNavigationBar] will typically
-/// cause the body to avoid the padding. The [SafeArea]
-/// widget can be used within the scaffold's body to avoid areas
-/// like display notches.
-///
-/// ## Troubleshooting
-///
-/// ### Nested Scaffolds
-///
-/// The Scaffold is designed to be a top level container for
-/// a [MaterialApp]. This means that adding a Scaffold
-/// to each route on a Material app will provide the app with
-/// Material's basic visual layout structure.
-///
-/// It is typically not necessary to nest Scaffolds. For example, in a
-/// tabbed UI, where the [bottomNavigationBar] is a [TabBar]
-/// and the body is a [TabBarView], you might be tempted to make each tab bar
-/// view a scaffold with a differently titled AppBar. Rather, it would be
-/// better to add a listener to the [TabController] that updates the
-/// AppBar
-///
-/// {@tool snippet}
-/// Add a listener to the app's tab controller so that the [AppBar] title of the
-/// app's one and only scaffold is reset each time a new tab is selected.
-///
-/// ```dart
-/// TabController(vsync: tickerProvider, length: tabCount)..addListener(() {
-///   if (!tabController.indexIsChanging) {
-///     setState(() {
-///       // Rebuild the enclosing scaffold with a new AppBar title
-///       appBarTitle = 'Tab ${tabController.index}';
-///     });
-///   }
-/// })
-/// ```
-/// {@end-tool}
-///
-/// Although there are some use cases, like a presentation app that
-/// shows embedded flutter content, where nested scaffolds are
-/// appropriate, it's best to avoid nesting scaffolds.
-///
-/// See also:
-///
-///  * [AppBar], which is a horizontal bar typically shown at the top of an app
-///    using the [appBar] property.
-///  * [BottomAppBar], which is a horizontal bar typically shown at the bottom
-///    of an app using the [bottomNavigationBar] property.
-///  * [FloatingActionButton], which is a circular button typically shown in the
-///    bottom right corner of the app using the [floatingActionButton] property.
-///  * [Drawer], which is a vertical panel that is typically displayed to the
-///    left of the body (and often hidden on phones) using the [drawer]
-///    property.
-///  * [BottomNavigationBar], which is a horizontal array of buttons typically
-///    shown along the bottom of the app using the [bottomNavigationBar]
-///    property.
-///  * [BottomSheet], which is an overlay typically shown near the bottom of the
-///    app. A bottom sheet can either be persistent, in which case it is shown
-///    using the [ScaffoldState.showBottomSheet] method, or modal, in which case
-///    it is shown using the [showModalBottomSheet] function.
-///  * [SnackBar], which is a lightweight message with an optional action which
-///    briefly displays at the bottom of the screen. Use the
-///    [ScaffoldMessengerState.showSnackBar] method to show snack bars.
-///  * [MaterialBanner], which displays an important, succinct message, at the
-///    top of the screen, below the app bar. Use the
-///    [ScaffoldMessengerState.showMaterialBanner] method to show material banners.
-///  * [ScaffoldState], which is the state associated with this widget.
-///  * <https://material.io/design/layout/responsive-layout-grid.html>
-///  * Cookbook: [Add a Drawer to a screen](https://flutter.dev/docs/cookbook/design/drawer)
+/// To display the dock, obtain the
+/// [BasedDockScaffoldState] for the current [BuildContext] via [BasedDockScaffold.of] and use the
+/// [BasedDockScaffoldState.showDock] function.
 class BasedDockScaffold extends StatefulWidget {
   const BasedDockScaffold({
     super.key,
@@ -426,36 +307,18 @@ class BasedDockScaffold extends StatefulWidget {
   ///
   /// This method can be expensive (it walks the element tree).
   ///
-  /// {@tool dartpad}
-  /// Typical usage of the [Scaffold.of] function is to call it from within the
-  /// `build` method of a child of a [Scaffold].
-  ///
-  /// ** See code in examples/api/lib/material/scaffold/scaffold.of.0.dart **
-  /// {@end-tool}
-  ///
-  /// {@tool dartpad}
-  /// When the [Scaffold] is actually created in the same `build` function, the
-  /// `context` argument to the `build` function can't be used to find the
-  /// [Scaffold] (since it's "above" the widget being returned in the widget
-  /// tree). In such cases, the following technique with a [Builder] can be used
-  /// to provide a new scope with a [BuildContext] that is "under" the
-  /// [Scaffold]:
-  ///
-  /// ** See code in examples/api/lib/material/scaffold/scaffold.of.1.dart **
-  /// {@end-tool}
-  ///
   /// A more efficient solution is to split your build function into several
   /// widgets. This introduces a new context from which you can obtain the
-  /// [Scaffold]. In this solution, you would have an outer widget that creates
-  /// the [Scaffold] populated by instances of your new inner widgets, and then
-  /// in these inner widgets you would use [Scaffold.of].
+  /// [BasedDockScaffold]. In this solution, you would have an outer widget that creates
+  /// the [BasedDockScaffold] populated by instances of your new inner widgets, and then
+  /// in these inner widgets you would use [BasedDockScaffold.of].
   ///
   /// A less elegant but more expedient solution is assign a [GlobalKey] to the
-  /// [Scaffold], then use the `key.currentState` property to obtain the
-  /// [ScaffoldState] rather than using the [Scaffold.of] function.
+  /// [BasedDockScaffold], then use the `key.currentState` property to obtain the
+  /// [BasedDockScaffoldState] rather than using the [BasedDockScaffold.of] function.
   ///
-  /// If there is no [Scaffold] in scope, then this will throw an exception.
-  /// To return null if there is no [Scaffold], use [maybeOf] instead.
+  /// If there is no [BasedDockScaffold] in scope, then this will throw an exception.
+  /// To return null if there is no [BasedDockScaffold], use [maybeOf] instead.
   static BasedDockScaffoldState of(BuildContext context) {
     final BasedDockScaffoldState? result =
         context.findAncestorStateOfType<BasedDockScaffoldState>();
@@ -468,26 +331,11 @@ class BasedDockScaffold extends StatefulWidget {
       ),
       ErrorDescription(
         'No BasedDockScaffoldState ancestor could be found starting from the context that was passed to BasedDockScaffoldState.of(). '
-        'This usually happens when the context provided is from the same StatefulWidget as that '
-        'whose build function actually creates the BasedDockScaffoldState widget being sought.',
+        'This usually happens when it called in the subtree of dockChild',
       ),
       ErrorDescription(
-        'Or called in the subtree of dockChild.',
-      ),
-      ErrorHint(
-        'There are several ways to avoid this problem. The simplest is to use a Builder to get a '
-        'context that is "under" the Scaffold. For an example of this, please see the '
-        'documentation for Scaffold.of():\n'
-        '  https://api.flutter.dev/flutter/material/Scaffold/of.html',
-      ),
-      ErrorHint(
-        'A more efficient solution is to split your build function into several widgets. This '
-        'introduces a new context from which you can obtain the Scaffold. In this solution, '
-        'you would have an outer widget that creates the Scaffold populated by instances of '
-        'your new inner widgets, and then in these inner widgets you would use Scaffold.of().\n'
-        'A less elegant but more expedient solution is assign a GlobalKey to the Scaffold, '
-        'then use the key.currentState property to obtain the ScaffoldState rather than '
-        'using the Scaffold.of() function.',
+        'Or the context provided is from the same StatefulWidget as that '
+        'whose build function actually creates the BasedDockScaffoldState widget being sought.',
       ),
       context.describeElement('The context used was'),
     ]);
