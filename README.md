@@ -52,7 +52,7 @@ Done, but it will revise if necessary
 
   Like the widget tree at [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart), you can't find the `BasedDockScaffoldState`
 
-  ![widget_tree](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/image.png)
+  ![widget_tree](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/widget_tree.png)
 
 - Since `BasedDockScaffold` is actually **_NOT_** a `Scaffold` widget,
   you can't get the `ScaffoldState` by using `BasedDockScaffold.of(context)`

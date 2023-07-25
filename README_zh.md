@@ -52,7 +52,7 @@
 
   就像 [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart) 里的组件树一样，你找不到 `BasedDockScaffoldState`
 
-  ![widget_tree](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/image.png)
+  ![widget_tree](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/widget_tree.png)
 
 - 因为 `BasedDockScaffold` 实际上 **_不是_** 一个 `Scaffold` 组件
   你无法通过调用 `BasedDockScaffold.of(context)` 来获取 `ScaffoldState`
