@@ -1,10 +1,10 @@
 <div align="center">
   <img id="based_dock_scaffold" width="96" alt="based_dock_scaffold" src="https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/icon.svg">
-  <p>『 based_dock_scaffold - 仓库模版！』</p>
+  <p>『 based_dock_scaffold - 来点 Dock 栏！』</p>
   <a href='https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/README.md'>English Readme</a>
 </div>
 
-`最后更新于：2023-01-10 21:00:00`
+`最后更新于：2023-07-25 23:54:08`
 
 [📚 简介](#-简介)
 
@@ -24,15 +24,25 @@
 
 # 📚 简介
 
-用于快速构建仓库 `README` 文件
+一个炫酷的有 Dock 栏的 `Scaffold` 组件，可显示类似 iPad 的 Dock 栏
 
 # 📸 示例
 
-![screenshots_1](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/screenshots_1.png)
+![screenshots](.github/screenshot.gif)
 
 # 📦 使用方式
 
-复制粘贴并修改 `README` 和 `LICENSE` 文件与 `.github` 文件夹内图片
+- 将 `based_dock_scaffold` 添加至你的 `pubspec.yaml`
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  ...
+  based_dock_scaffold: $latest_version
+```
+
+- 在 [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart) 查看样例代码
 
 # ⏳ 进度
 
@@ -40,13 +50,15 @@
 
 # 📌 注意事项
 
-- 记得修改 `<img>` 和 `<a>` 标签的 `src` 与 `alt` 和 `href` 属性
-- 记得修改 `<p>` 标签
-- 记得修改最后更新时间
-- 记得修改 [贡献者](#-Contributor) 和 [声明](#-Declaration)里的仓库名和分支名
-- 记得修改 `LICENSE` 里的年份和名字
-- 如果你想在本 README 页面添加自己的链接，请去除 emoji 后不可见的 `\ufe0f`
-- 请尽可能使用全链接
+- **_不要_** 导入任何在 `src` 文件夹下的文件：
+
+```dart
+import 'package:based_dock_scaffold/src/*.dart';
+```
+
+- 因为 `BasedDockScaffold` 实际上 **_不是_** 一个 `Scaffold` 组件
+  你应该使用 `Scaffold.of(context)` 来获取 `ScaffoldState`
+  而不是 `BasedDockScaffold.of(context)`
 
 # 🧑‍💻 贡献者
 

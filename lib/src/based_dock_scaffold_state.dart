@@ -34,6 +34,18 @@ class BasedDockScaffoldState extends State<BasedDockScaffold> {
     );
   }
 
+  void show() {
+    OverlayState overlayState = Overlay.of(context);
+    if (_overlayEntry.mounted) return;
+    overlayState.insert(_overlayEntry);
+    Future.delayed(const Duration(milliseconds: 100), () {
+      setState(() {
+        _barPosition = widget.dockPositionUpperBound;
+        _overlayEntry.markNeedsBuild();
+      });
+    });
+  }
+
   void _hide() {
     setState(() {
       _barPosition = widget.dockPositionLowerBound;

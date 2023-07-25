@@ -4,5 +4,3 @@ export 'package:flutter/gestures.dart';
 export 'package:flutter/foundation.dart';
 
 export 'package:based_dock_scaffold/based_dock_scaffold.dart';
-
-export '_scaffold.dart';

@@ -1,10 +1,10 @@
 <div align="center">
   <img id="based_dock_scaffold" width="96" alt="based_dock_scaffold" src="https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/icon.svg">
-  <p>『 based_dock_scaffold - Repository Template! 』</p>
+  <p>『 based_dock_scaffold - Based Dock Scaffold! 』</p>
   <a href="https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/README_zh.md">中文 Readme</a>
 </div>
 
-`Latest update: 2023-01-10 21:00:00`
+`Latest update: 2023-07-25 23:54:08`
 
 [📚 Introduction](#-Introduction)
 
@@ -24,15 +24,25 @@
 
 # 📚 Introduction
 
-Using to build `README` file quickly
+A Based Dock Scaffold Widget, Which Helps You Create A Scaffold With A IPad-Like Dock
 
 # 📸 Screenshots
 
-![screenshots_1](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/screenshots_1.png)
+![screenshots](.github/screenshot.gif)
 
 # 📦 How to use
 
-Copy, paste then revise `README` and `LICENSE` file and the image in `.github` folder
+- Add `based_dock_scaffold` to your `pubspec.yaml`
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  ...
+  based_dock_scaffold: $latest_version
+```
+
+- See the example code at [example](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/example/lib/main.dart)
 
 # ⏳ Rate of progress
 
@@ -40,13 +50,15 @@ Done, but it will revise if necessary
 
 # 📌 Cautions
 
-- Remember to revise the `src`, `alt` and `href` attribute in `<img>` and `<a>` tags
-- Remember to revise the `<p>` tag
-- Remember to revise the latest update time
-- Remember to revise the repository name and branch in [Contributor](#-Contributor) and [Declaration](#-Declaration)
-- Remember to revise the year and name in `LICENSE`
-- If you want to add link to another section on the readme page by yourself, please remove invisible `\ufe0f` after emoji
-- Please use the full link as much as possible
+- **_DO NOT_** import any file below `src` folder:
+
+```dart
+import 'package:based_dock_scaffold/src/*.dart';
+```
+
+- Since `BasedDockScaffold` is actually **_NOT_** a `Scaffold`
+  you should use `Scaffold.of(context)` to get `ScaffoldState`
+  rather than `BasedDockScaffold.of(context)`
 
 # 🧑‍💻 Contributor
 
