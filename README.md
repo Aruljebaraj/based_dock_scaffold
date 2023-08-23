@@ -28,7 +28,7 @@ A Based Dock Scaffold Widget, Which Helps You Create A Scaffold With A IPad-Like
 
 # 📸 Screenshots
 
-![screenshots](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/screenshot.gif)
+![screenshots](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/screenshot.gif)
 
 # 📦 How to use
 
