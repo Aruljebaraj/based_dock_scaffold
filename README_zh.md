@@ -28,7 +28,7 @@
 
 # 📸 示例
 
-![screenshots](https://github.com/Cierra-Runis/based_dock_scaffold/blob/master/.github/screenshot.gif)
+![screenshots](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/screenshot.gif)
 
 # 📦 使用方式
 
