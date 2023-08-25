@@ -1,10 +1,10 @@
 name: based_dock_scaffold
 description: A Based Dock Scaffold Widget, Which Helps You Create A Scaffold With A IPad-Like Dock
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/Cierra-Runis/based_dock_scaffold
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ">=3.0.5 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
