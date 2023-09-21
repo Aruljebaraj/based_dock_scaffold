@@ -25,6 +25,14 @@ class _MyAppState extends State<MyApp> {
         ),
         useMaterial3: true,
       ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          brightness: Brightness.dark,
+          seedColor: Colors.deepPurple,
+        ),
+        useMaterial3: true,
+      ),
+      themeMode: _isDark ? ThemeMode.dark : ThemeMode.light,
       home: BasedDockScaffold(
         appBar: AppBar(
           title: const Text('Based Dock Scaffold'),
