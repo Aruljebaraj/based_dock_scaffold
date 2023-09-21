@@ -30,6 +30,8 @@
 
 ![screenshots](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/screenshot.gif)
 
+或者试试 [在线示例](https://note-of-me.top/based_dock_scaffold/)
+
 # 📦 使用方式
 
 - 按照 [Installing](https://pub.dev/packages/based_dock_scaffold/install) 将 `based_dock_scaffold` 添加至你的 `pubspec.yaml`

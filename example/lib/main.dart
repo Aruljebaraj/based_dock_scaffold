@@ -3,8 +3,17 @@ import 'package:based_dock_scaffold/based_dock_scaffold.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late bool _isDark = true;
+
+  void changeThemeMode() => setState(() => _isDark = !_isDark);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +28,12 @@ class MyApp extends StatelessWidget {
       home: BasedDockScaffold(
         appBar: AppBar(
           title: const Text('Based Dock Scaffold'),
+          actions: [
+            IconButton(
+              onPressed: changeThemeMode,
+              icon: const Icon(Icons.color_lens_rounded),
+            )
+          ],
         ),
         body: const Center(
           child: Wrap(

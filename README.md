@@ -30,6 +30,8 @@ A Based Dock Scaffold Widget, Which Helps You Create A Scaffold With A IPad-Like
 
 ![screenshots](https://raw.githubusercontent.com/Cierra-Runis/based_dock_scaffold/master/.github/screenshot.gif)
 
+Or try out [live example app](https://note-of-me.top/based_dock_scaffold/)
+
 # 📦 How to use
 
 - Follow [Installing](https://pub.dev/packages/based_dock_scaffold/install) to add `based_dock_scaffold` to your `pubspec.yaml`
